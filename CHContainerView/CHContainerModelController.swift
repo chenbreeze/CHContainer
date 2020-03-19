@@ -13,13 +13,13 @@ import UIKit
 class CHContainerModelController: NSObject{
     var model: CHContainerModel = CHContainerModel()
     var viewConfig: CHContainerItemConfig
-    var actionConfig: EventActionConfig
+    var actionConfig: CHContainerEventConfig
     
     weak var delegte: CHContainerViewDelegate?
     weak var eventHanlder: AnyObject?
     
    required init(viewConfig: CHContainerItemConfig,
-               actionConfig: EventActionConfig) {
+               actionConfig: CHContainerEventConfig) {
          self.viewConfig = viewConfig;
          self.actionConfig = actionConfig
          super.init()
@@ -176,7 +176,7 @@ extension CHContainerModelController: UITableViewDelegate, UITableViewDataSource
         
      
         if  let action = self.actionConfig.action(for: model.viewId) {
-            action(model, view)
+            action.tapAction(model, view)
             
         }
     }

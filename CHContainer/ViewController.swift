@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         viewConfig.registe(cellClass: DemoCell1.self, with: "DemoModel3")
         viewConfig.registe(cellClass: DemoCell3.self, with: "DemoModel4")
         
-        var eventConfig = EventActionConfig()
+        var eventConfig = CHContainerEventConfig()
         
         
         return CHContainerView(viewConfig: viewConfig, actionConfig: eventConfig)

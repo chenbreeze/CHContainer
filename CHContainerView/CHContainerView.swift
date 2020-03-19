@@ -14,7 +14,7 @@ class CHContainerView: UIView {
     private let modelController: CHContainerModelController
     
     required init(viewConfig: CHContainerItemConfig,
-                  actionConfig: EventActionConfig) {
+                  actionConfig: CHContainerEventConfig) {
         self.modelController = CHContainerModelController(viewConfig: viewConfig, actionConfig: actionConfig)
         super.init(frame: CGRect.zero)
         
